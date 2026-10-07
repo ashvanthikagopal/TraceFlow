@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <!-- Soft Squircle Shadow -->
+    <filter id="tf-icon-shadow" x="0" y="0" width="120" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#2563eb" flood-opacity="0.18" />
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.04" />
+    </filter>
+
+    <!-- Glass Background Gradient -->
+    <linearGradient id="tf-bg-grad" x1="16" y1="12" x2="104" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f8faff" />
+      <stop offset="100%" stop-color="#edf2ff" />
+    </linearGradient>
+
+    <linearGradient id="tf-border-grad" x1="16" y1="12" x2="104" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Cyan to Blue Top Pill -->
+    <linearGradient id="tf-cyan-blue" x1="32" y1="22" x2="74" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="45%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <!-- Violet to Purple Bottom Pill -->
+    <linearGradient id="tf-violet-purple" x1="32" y1="98" x2="74" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9333ea" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+
+    <!-- Vertex Blend Overlay Gradient -->
+    <linearGradient id="tf-vertex-blend" x1="52" y1="46" x2="78" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Inner Soft Glow on Top Pill -->
+    <linearGradient id="tf-top-sheen" x1="36" y1="24" x2="48" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle App Container -->
+  <g filter="url(#tf-icon-shadow)">
+    <rect x="12" y="10" width="96" height="96" rx="28" fill="url(#tf-bg-grad)" stroke="url(#tf-border-grad)" stroke-width="1.5" />
+  </g>
+
+  <!-- Ambient background curves mimicking frosted glass -->
+  <path d="M14 65 C35 55, 60 70, 106 40 L106 104 C70 108, 40 102, 14 104 Z" fill="#2563eb" fill-opacity="0.03" />
+  <path d="M14 30 C45 35, 75 20, 106 55 L106 12 C80 10, 40 10, 14 12 Z" fill="#9333ea" fill-opacity="0.02" />
+
+  <!-- Top Cyan-Blue Capsule (angle: -45deg, from ~ (38,28) down-right to (72,62)) -->
+  <!-- Capsule Path: rounded end at (38, 28), body, rounded end at (72, 62) -->
+  <path
+    d="M 31.5 35.5 
+       C 26.5 30.5, 26.5 22.5, 31.5 17.5 
+       C 36.5 12.5, 44.5 12.5, 49.5 17.5 
+       L 79.5 47.5 
+       C 84.5 52.5, 84.5 60.5, 79.5 65.5 
+       C 74.5 70.5, 66.5 70.5, 61.5 65.5 
+       Z"
+    transform="translate(0, 4)"
+    fill="url(#tf-cyan-blue)"
+  />
+
+  <!-- Top Sheen Highlight -->
+  <ellipse cx="40.5" cy="25.5" rx="5.5" ry="4" transform="rotate(-45 40.5 25.5)" fill="url(#tf-top-sheen)" />
+
+  <!-- Bottom Purple-Violet Capsule (angle: +45deg, from ~ (38, 84) up-right to (72, 50)) -->
+  <path
+    d="M 61.5 46.5 
+       C 66.5 41.5, 74.5 41.5, 79.5 46.5 
+       C 84.5 51.5, 84.5 59.5, 79.5 64.5 
+       L 49.5 94.5 
+       C 44.5 99.5, 36.5 99.5, 31.5 94.5 
+       C 26.5 89.5, 26.5 81.5, 31.5 76.5 
+       Z"
+    transform="translate(0, 4)"
+    fill="url(#tf-violet-purple)"
+  />
+
+  <!-- Overlap Vertex Junction (seamless gradient blend) -->
+  <path
+    d="M 55 53 
+       L 67 41 
+       C 74.5 41.5, 84.5 51.5, 79.5 64.5 
+       C 74.5 70.5, 66.5 70.5, 61.5 65.5 
+       L 55 53 Z"
+    transform="translate(0, 4)"
+    fill="url(#tf-vertex-blend)"
+    fill-opacity="0.9"
+  />
+</svg>
